@@ -1,4 +1,4 @@
-output "vpc_information" {
+output "vpc_id" {
     value = aws_vpc.main
 }
 
