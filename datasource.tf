@@ -15,7 +15,7 @@ data "aws_vpc" "default" {
 
 
 data "aws_route_table" "main" {                                                   #never ever change default systax even single word also
-  vpc_id = data.aws_vpc.default.id                                                ## means it is default route table connecting to vpc_id
+  vpc_id = data.aws_vpc.default.id                                                ## means it is default route table connecting to  default vpc_id
   filter {
     name   = "association.main"
     values = ["true"]

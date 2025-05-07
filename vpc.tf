@@ -1,5 +1,5 @@
 resource "aws_vpc" "main" {
-  cidr_block       = var.cidr_block
+  cidr_block       = var.cidr_block              #it is fixed u can check in variable
   instance_tenancy = "default"
   enable_dns_support = var.enable_dns_support
 
@@ -123,7 +123,7 @@ resource "aws_eip" "nat" {                       #elastic ip = static ip it is s
 
 resource "aws_nat_gateway" "nat" {
   allocation_id = aws_eip.nat.id
-  subnet_id     = aws_subnet.public[0].id
+  subnet_id     = aws_subnet.public[0].id                             #u can see here natgateway attched to public subnet 
 
   tags = merge (
     var.common_tags,
